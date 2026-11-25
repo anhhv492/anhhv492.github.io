@@ -1,0 +1,308 @@
+<!doctype html>
+<html lang="vi">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Traychemy: game giải đố xếp khay, nhặt món ghép đôi</title>
+<meta name="description" content="Traychemy là game giải đố xếp khay: nhặt món, ghép đúng cặp để dọn sạch bàn trước khi khay đầy. Hơn 30 màn, boss, chế độ Vô Tận. Chơi thử ngay trên trang này.">
+<meta name="theme-color" content="#FFF3D6">
+<link rel="icon" href="favicon.svg" type="image/svg+xml">
+<link rel="apple-touch-icon" href="apple-touch-icon.png">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Traychemy: nhặt món, ghép đôi, dọn sạch bàn">
+<meta property="og:description" content="Game giải đố xếp khay bằng tiếng Việt. Hơn 30 màn, boss khổng lồ và chế độ Vô Tận. Chơi thử một màn ngay trên trang.">
+<meta property="og:image" content="https://anhhv492.github.io/og.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:locale" content="vi_VN">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<a class="skip" href="#main" data-i18n="skip">Bỏ qua, tới nội dung chính</a>
+<svg class="sprite" width="0" height="0" aria-hidden="true" focusable="false" xmlns="http://www.w3.org/2000/svg"><defs>
+<symbol id="i-dog" viewBox="0 0 100 100"><ellipse cx="16" cy="48" rx="14" ry="26" fill="#A9763F"/><ellipse cx="84" cy="48" rx="14" ry="26" fill="#A9763F"/><ellipse cx="50" cy="50" rx="36" ry="33" fill="#D9A066"/><ellipse cx="50" cy="66" rx="20" ry="14" fill="#EACBAB"/><ellipse cx="50" cy="60" rx="7" ry="5.5" fill="#3A2A1E"/><circle cx="36" cy="42" r="5.5" fill="#3A2A1E"/><circle cx="64" cy="42" r="5.5" fill="#3A2A1E"/><ellipse cx="50" cy="76" rx="7" ry="5" fill="#F08A9B"/></symbol>
+<symbol id="i-bone" viewBox="0 0 100 100"><rect x="20" y="40" width="60" height="20" rx="10" fill="#A38A63"/><rect x="20" y="41.5" width="60" height="17" rx="8.5" fill="#F7F0DC"/><circle cx="20" cy="36" r="13.5" fill="#A38A63"/><circle cx="20" cy="36" r="11.5" fill="#F7F0DC"/><circle cx="20" cy="64" r="13.5" fill="#A38A63"/><circle cx="20" cy="64" r="11.5" fill="#F7F0DC"/><circle cx="80" cy="36" r="13.5" fill="#A38A63"/><circle cx="80" cy="36" r="11.5" fill="#F7F0DC"/><circle cx="80" cy="64" r="13.5" fill="#A38A63"/><circle cx="80" cy="64" r="11.5" fill="#F7F0DC"/></symbol>
+<symbol id="i-cat" viewBox="0 0 100 100"><polygon points="14,44 44,30 20,-4" fill="#6E7883"/><polygon points="86,44 56,30 80,-4" fill="#6E7883"/><polygon points="20,40 38,31 23,8" fill="#F0AEBC"/><polygon points="80,40 62,31 77,8" fill="#F0AEBC"/><ellipse cx="50" cy="52" rx="36" ry="31" fill="#9AA3AD"/><ellipse cx="36" cy="45" rx="7.5" ry="9.5" fill="#6FCF6F"/><ellipse cx="64" cy="45" rx="7.5" ry="9.5" fill="#6FCF6F"/><circle cx="36" cy="46" r="3" fill="#22303A"/><circle cx="64" cy="46" r="3" fill="#22303A"/><polygon points="45,60 55,60 50,67" fill="#F08A9B"/><line x1="38" y1="62" x2="14" y2="57" stroke="#4E5862" stroke-width="2.2"/><line x1="38" y1="66" x2="14" y2="69" stroke="#4E5862" stroke-width="2.2"/><line x1="62" y1="62" x2="86" y2="57" stroke="#4E5862" stroke-width="2.2"/><line x1="62" y1="66" x2="86" y2="69" stroke="#4E5862" stroke-width="2.2"/></symbol>
+<symbol id="i-fish" viewBox="0 0 100 100"><polygon points="64,50 92,26 92,74" fill="#2E8FA0"/><ellipse cx="44" cy="50" rx="32" ry="22" fill="#4FB8C9"/><polygon points="40,32 56,34 48,16" fill="#2E8FA0"/><ellipse cx="42" cy="56" rx="22" ry="10" fill="#8DD1DC"/><circle cx="30" cy="45" r="6.5" fill="#FFFFFF"/><circle cx="29" cy="45" r="3.2" fill="#1E3A42"/></symbol>
+<symbol id="i-mouse" viewBox="0 0 100 100"><path d="M66.21 77.57 A18 18 0 1 1 96.91 72.16" fill="none" stroke="#9BA1A8" stroke-width="3.5"/><circle cx="24" cy="30" r="17" fill="#9BA1A8"/><circle cx="24" cy="30" r="11" fill="#F0AEBC"/><circle cx="76" cy="30" r="17" fill="#9BA1A8"/><circle cx="76" cy="30" r="11" fill="#F0AEBC"/><ellipse cx="50" cy="52" rx="31" ry="27" fill="#C3C7CC"/><circle cx="39" cy="48" r="4.5" fill="#33383D"/><circle cx="61" cy="48" r="4.5" fill="#33383D"/><ellipse cx="50" cy="66" rx="6" ry="4.5" fill="#F0839B"/></symbol>
+<symbol id="i-cheese" viewBox="0 0 100 100"><polygon points="12,76 88,76 88,40 12,52" fill="#D9A420"/><polygon points="12,52 88,40 70,20 16,36" fill="#F5C542"/><circle cx="36" cy="62" r="7.5" fill="#D9A420"/><circle cx="64" cy="56" r="5.5" fill="#D9A420"/><circle cx="52" cy="69" r="4" fill="#D9A420"/></symbol>
+<symbol id="i-water" viewBox="0 0 100 100"><polygon points="50,8 26,52 74,52" fill="#4A9BE8"/><circle cx="50" cy="56" r="27" fill="#4A9BE8"/><ellipse cx="41" cy="56" rx="7" ry="11" fill="#FFFFFF" fill-opacity="0.55"/></symbol>
+<symbol id="i-plant" viewBox="0 0 100 100"><polygon points="24,60 76,60 69,90 31,90" fill="#B5764A"/><rect x="20" y="52" width="60" height="13" rx="5" fill="#8D5A34"/><line x1="50" y1="58" x2="50" y2="20" stroke="#3E8C42" stroke-width="5.5"/><ellipse cx="32" cy="36" rx="17" ry="10" fill="#5FBF63"/><ellipse cx="68" cy="26" rx="17" ry="10" fill="#5FBF63"/><circle cx="50" cy="16" r="8" fill="#87CF8A"/></symbol>
+<symbol id="i-flower" viewBox="0 0 100 100"><line x1="50" y1="54" x2="50" y2="92" stroke="#3E8C42" stroke-width="5"/><ellipse cx="66" cy="78" rx="14" ry="8" fill="#5FBF63"/><circle cx="70" cy="42" r="13" fill="#E86FA8"/><circle cx="60" cy="59.32" r="13" fill="#E86FA8"/><circle cx="40" cy="59.32" r="13" fill="#E86FA8"/><circle cx="30" cy="42" r="13" fill="#E86FA8"/><circle cx="40" cy="24.68" r="13" fill="#E86FA8"/><circle cx="60" cy="24.68" r="13" fill="#E86FA8"/><circle cx="50" cy="42" r="14" fill="#F7D64A"/><circle cx="50" cy="42" r="8" fill="#E8A33D"/></symbol>
+<symbol id="i-bee" viewBox="0 0 100 100"><ellipse cx="42" cy="18" rx="16" ry="12" fill="#FFFFFF" fill-opacity="0.85"/><ellipse cx="66" cy="18" rx="16" ry="12" fill="#FFFFFF" fill-opacity="0.85"/><ellipse cx="52" cy="58" rx="34" ry="24" fill="#F2C230"/><ellipse cx="39" cy="58" rx="4.5" ry="22.18" fill="#2E2A22"/><ellipse cx="54" cy="58" rx="4.5" ry="23.96" fill="#2E2A22"/><ellipse cx="69" cy="58" rx="4.5" ry="20.78" fill="#2E2A22"/><circle cx="18" cy="56" r="14" fill="#2E2A22"/><circle cx="14" cy="53" r="4" fill="#FFFFFF"/><polygon points="84,54 84,63 97,59" fill="#2E2A22"/></symbol>
+<symbol id="i-honey" viewBox="0 0 100 100"><rect x="23" y="34" width="54" height="56" rx="12" fill="#C58B34"/><rect x="27" y="38" width="46" height="48" rx="10" fill="#E8A33D"/><rect x="19" y="16" width="62" height="20" rx="7" fill="#B5762A"/><rect x="33" y="52" width="34" height="20" rx="5" fill="#FFF0CC"/><text x="50" y="66.5" text-anchor="middle" font-size="20" font-weight="800" fill="#B5762A" font-family="Arial,Helvetica,sans-serif">H</text><circle cx="80" cy="44" r="7" fill="#F7C55A"/></symbol>
+<symbol id="i-bear" viewBox="0 0 100 100"><circle cx="20" cy="24" r="15" fill="#6B4826"/><circle cx="80" cy="24" r="15" fill="#6B4826"/><circle cx="20" cy="24" r="8" fill="#B98A5E"/><circle cx="80" cy="24" r="8" fill="#B98A5E"/><ellipse cx="50" cy="50" rx="36" ry="33" fill="#8C6239"/><ellipse cx="50" cy="65" rx="21" ry="15" fill="#C9A277"/><ellipse cx="50" cy="58" rx="8" ry="6" fill="#3A2A1E"/><circle cx="36" cy="41" r="5" fill="#3A2A1E"/><circle cx="64" cy="41" r="5" fill="#3A2A1E"/></symbol>
+<symbol id="i-box" viewBox="0 0 100 100"><rect x="12" y="16" width="76" height="68" rx="9" fill="#8D6337"/><rect x="16" y="20" width="68" height="60" rx="7" fill="#B98A54"/><line x1="16" y1="38" x2="84" y2="38" stroke="#8D6337" stroke-width="3.5"/><circle cx="23" cy="28" r="3.2" fill="#8D6337"/><circle cx="23" cy="72" r="3.2" fill="#8D6337"/><circle cx="77" cy="28" r="3.2" fill="#8D6337"/><circle cx="77" cy="72" r="3.2" fill="#8D6337"/><text x="50" y="66" text-anchor="middle" font-size="42" font-weight="800" fill="#FFF3D6" font-family="Arial,Helvetica,sans-serif">?</text></symbol>
+</defs></svg>
+
+<header class="nav">
+  <div class="container nav__in">
+    <a class="brand" href="#top" aria-label="Traychemy, về đầu trang" data-i18n-aria="aria.brand"><img src="favicon.svg" width="32" height="32" alt="">Traychemy</a>
+    <nav aria-label="Mục chính" data-i18n-aria="aria.nav">
+      <a href="#how" data-i18n="nav.how">Cách chơi</a>
+      <a href="#features" data-i18n="nav.features">Tính năng</a>
+      <a href="#worlds" data-i18n="nav.worlds">Thế giới</a>
+      <a href="#endless" data-i18n="nav.endless">Vô Tận</a>
+    </nav>
+    <label class="lang" id="lang-box" hidden>
+      <span class="lang__label" data-i18n="lang.label">Ngôn ngữ:</span>
+      <select id="lang" autocomplete="off">
+        <option value="vi" lang="vi">Tiếng Việt</option>
+        <option value="en" lang="en">English</option>
+      </select>
+    </label>
+    <a class="btn btn--small" href="#download" data-i18n="soon.short">Sắp ra mắt</a>
+  </div>
+</header>
+
+<main id="main">
+<section class="hero" id="top">
+  <div class="container hero__grid">
+    <div>
+      <p class="eyebrow" data-i18n="hero.eyebrow">Game giải đố xếp khay</p>
+      <h1 data-i18n="hero.title">Nhặt món. Ghép đôi.<em>Dọn sạch bàn.</em></h1>
+      <p class="lead" data-i18n="hero.lead">Mỗi món bạn nhặt rơi xuống khay. Đúng cặp thì tự ghép rồi biến mất; khay đầy mà không ghép được là thua. Thử một ván ngay bên cạnh, không cần cài đặt.</p>
+      <div class="cta">
+        <a class="btn" href="#demo" data-i18n="hero.try">Chơi thử ngay</a>
+        <a class="btn btn--ghost" href="#how" data-i18n="hero.how">Xem cách chơi</a>
+      </div>
+      <ul class="facts" aria-label="Điểm nổi bật" data-i18n-aria="aria.facts">
+        <li data-i18n="fact.levels">Hơn 30 màn</li>
+        <li data-i18n="fact.boss">Boss khổng lồ</li>
+        <li data-i18n="fact.endless">Chế độ Vô Tận</li>
+        <li data-i18n="fact.worlds">5 thế giới</li>
+        <li data-i18n="fact.lang">100% tiếng Việt</li>
+      </ul>
+      <p class="soon" data-i18n="hero.soon">Đang phát triển, sắp ra mắt trên Android &amp; iOS</p>
+    </div>
+
+    <div class="demo" id="demo">
+      <div class="phone">
+        <div class="phone__screen">
+          <div class="phone__top">
+            <span class="chip" data-i18n="demo.chip">Màn thử · khay 5 ô</span>
+            <span class="chip chip--dim" id="left">Còn 10 món</span>
+          </div>
+          <div class="board" id="board" role="group" aria-label="Bàn chơi" data-i18n-aria="aria.board"><noscript>Bật JavaScript để chơi thử.</noscript></div>
+          <p class="status" id="status" role="status" aria-live="polite"></p>
+          <div class="tray" id="tray" role="group" aria-label="Khay"></div>
+          <div class="combo" id="combo" aria-hidden="true"></div>
+          <div class="confetti" id="confetti" aria-hidden="true"></div>
+          <div class="result" id="result" hidden role="dialog" aria-labelledby="result-title" aria-describedby="result-text">
+            <div>
+              <h3 id="result-title"></h3>
+              <p id="result-text"></p>
+              <button class="btn" id="again" type="button" data-i18n="demo.again">Chơi lại</button>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="demo-under">
+        <button class="btn btn--ghost btn--small" id="hint" type="button" data-i18n="demo.hint">Gợi ý</button>
+        <button class="btn btn--ghost btn--small" id="restart" type="button" data-i18n="demo.again">Chơi lại</button>
+      </div>
+      <details class="recipes-box">
+        <summary data-i18n="demo.recipes">Công thức của màn thử</summary>
+        <ul class="recipes">
+          <li><span class="tile tile--static t-water" role="img" aria-label="Nước"><span class="face"></span><svg class="art" aria-hidden="true" focusable="false"><use href="#i-water"></use></svg></span><span class="op">+</span><span class="tile tile--static t-plant" role="img" aria-label="Mầm Cây"><span class="face"></span><svg class="art" aria-hidden="true" focusable="false"><use href="#i-plant"></use></svg></span><span class="op">→</span><span class="tile tile--static t-flower" role="img" aria-label="Hoa"><span class="face"></span><svg class="art" aria-hidden="true" focusable="false"><use href="#i-flower"></use></svg></span><span data-i18n="item.flower">Hoa</span></li>
+          <li><span class="tile tile--static t-flower" role="img" aria-label="Hoa"><span class="face"></span><svg class="art" aria-hidden="true" focusable="false"><use href="#i-flower"></use></svg></span><span class="op">+</span><span class="tile tile--static t-bee" role="img" aria-label="Ong"><span class="face"></span><svg class="art" aria-hidden="true" focusable="false"><use href="#i-bee"></use></svg></span><span class="op">→</span><span class="tile tile--static t-honey" role="img" aria-label="Mật Ong"><span class="face"></span><svg class="art" aria-hidden="true" focusable="false"><use href="#i-honey"></use></svg></span><span data-i18n="item.honey">Mật Ong</span></li>
+          <li><span class="tile tile--static t-honey" role="img" aria-label="Mật Ong"><span class="face"></span><svg class="art" aria-hidden="true" focusable="false"><use href="#i-honey"></use></svg></span><span class="op">+</span><span class="tile tile--static t-bear" role="img" aria-label="Gấu"><span class="face"></span><svg class="art" aria-hidden="true" focusable="false"><use href="#i-bear"></use></svg></span><span class="op">→</span><span data-i18n="gone">biến mất</span></li>
+          <li><span class="tile tile--static t-dog" role="img" aria-label="Chó"><span class="face"></span><svg class="art" aria-hidden="true" focusable="false"><use href="#i-dog"></use></svg></span><span class="op">+</span><span class="tile tile--static t-bone" role="img" aria-label="Xương"><span class="face"></span><svg class="art" aria-hidden="true" focusable="false"><use href="#i-bone"></use></svg></span><span class="op">→</span><span data-i18n="gone">biến mất</span></li>
+          <li><span class="tile tile--static t-cat" role="img" aria-label="Mèo"><span class="face"></span><svg class="art" aria-hidden="true" focusable="false"><use href="#i-cat"></use></svg></span><span class="op">+</span><span class="tile tile--static t-fish" role="img" aria-label="Cá"><span class="face"></span><svg class="art" aria-hidden="true" focusable="false"><use href="#i-fish"></use></svg></span><span class="op">→</span><span data-i18n="gone">biến mất</span></li>
+          <li><span class="tile tile--static t-mouse" role="img" aria-label="Chuột"><span class="face"></span><svg class="art" aria-hidden="true" focusable="false"><use href="#i-mouse"></use></svg></span><span class="op">+</span><span class="tile tile--static t-cheese" role="img" aria-label="Phô Mai"><span class="face"></span><svg class="art" aria-hidden="true" focusable="false"><use href="#i-cheese"></use></svg></span><span class="op">→</span><span data-i18n="gone">biến mất</span></li>
+        </ul>
+      </details>
+    </div>
+  </div>
+</section>
+
+<section class="band" id="how">
+  <div class="container">
+    <div class="section-head">
+      <p class="eyebrow" data-i18n="how.eyebrow">Cách chơi</p>
+      <h2 class="title" data-i18n="how.title">Ba bước là hiểu hết</h2>
+      <p class="lead" data-i18n="how.lead">Luật rất ngắn. Cái khó nằm ở thứ tự bạn nhặt.</p>
+    </div>
+    <div class="steps">
+      <article class="step">
+        <h3 data-i18n="step1.title">Chạm món không bị đè</h3>
+        <p data-i18n="step1.text">Món bị đè lên sẽ tối đi. Gỡ món phía trên ra trước thì món bên dưới mới nhặt được.</p>
+        <div class="mini"><span class="tile tile--static t-dog" role="img" aria-label="Chó"><span class="face"></span><svg class="art" aria-hidden="true" focusable="false"><use href="#i-dog"></use></svg></span><span class="op">›</span><span class="tile tile--static t-bone tile--dim" role="img" aria-label="Xương"><span class="face"></span><svg class="art" aria-hidden="true" focusable="false"><use href="#i-bone"></use></svg></span></div>
+      </article>
+      <article class="step">
+        <h3 data-i18n="step2.title">Đúng cặp tự ghép</h3>
+        <p data-i18n="step2.text">Chó gặp Xương, Mèo gặp Cá: cả hai biến mất khỏi khay. Có cặp còn ghép ra một món mới.</p>
+        <div class="mini"><span class="tile tile--static t-dog" role="img" aria-label="Chó"><span class="face"></span><svg class="art" aria-hidden="true" focusable="false"><use href="#i-dog"></use></svg></span><span class="op">+</span><span class="tile tile--static t-bone" role="img" aria-label="Xương"><span class="face"></span><svg class="art" aria-hidden="true" focusable="false"><use href="#i-bone"></use></svg></span><span class="op">→</span><span class="gone" data-i18n="gone">biến mất</span></div>
+      </article>
+      <article class="step">
+        <h3 data-i18n="step3.title">Đừng để khay kẹt</h3>
+        <p data-i18n="step3.text">Khay đầy mà không có cặp nào ghép được là thua. Nghĩ trước khi chạm.</p>
+        <div class="mini" style="--ts:40px"><span class="tile tile--static t-dog" role="img" aria-label="Chó"><span class="face"></span><svg class="art" aria-hidden="true" focusable="false"><use href="#i-dog"></use></svg></span><span class="tile tile--static t-cat" role="img" aria-label="Mèo"><span class="face"></span><svg class="art" aria-hidden="true" focusable="false"><use href="#i-cat"></use></svg></span><span class="tile tile--static t-mouse" role="img" aria-label="Chuột"><span class="face"></span><svg class="art" aria-hidden="true" focusable="false"><use href="#i-mouse"></use></svg></span><span class="tile tile--static t-bee" role="img" aria-label="Ong"><span class="face"></span><svg class="art" aria-hidden="true" focusable="false"><use href="#i-bee"></use></svg></span><span class="tile tile--static t-water" role="img" aria-label="Nước"><span class="face"></span><svg class="art" aria-hidden="true" focusable="false"><use href="#i-water"></use></svg></span></div>
+      </article>
+    </div>
+
+    <div class="chain">
+      <h3 data-i18n="chain.title">Một lần chạm có thể kích ra cả chuỗi</h3>
+      <div class="chain__row" role="group" aria-label="Chuỗi Nước, Mầm Cây, Hoa, Ong, Mật Ong, Gấu" data-i18n-aria="aria.chain">
+        <span class="tile tile--static t-water" role="img" aria-label="Nước"><span class="face"></span><svg class="art" aria-hidden="true" focusable="false"><use href="#i-water"></use></svg></span><span class="op">+</span><span class="tile tile--static t-plant" role="img" aria-label="Mầm Cây"><span class="face"></span><svg class="art" aria-hidden="true" focusable="false"><use href="#i-plant"></use></svg></span><span class="arrow">→</span><span class="tile tile--static t-flower" role="img" aria-label="Hoa"><span class="face"></span><svg class="art" aria-hidden="true" focusable="false"><use href="#i-flower"></use></svg></span><span class="op">+</span><span class="tile tile--static t-bee" role="img" aria-label="Ong"><span class="face"></span><svg class="art" aria-hidden="true" focusable="false"><use href="#i-bee"></use></svg></span><span class="arrow">→</span><span class="tile tile--static t-honey" role="img" aria-label="Mật Ong"><span class="face"></span><svg class="art" aria-hidden="true" focusable="false"><use href="#i-honey"></use></svg></span><span class="op">+</span><span class="tile tile--static t-bear" role="img" aria-label="Gấu"><span class="face"></span><svg class="art" aria-hidden="true" focusable="false"><use href="#i-bear"></use></svg></span><span class="arrow">→</span><span class="gone" data-i18n="gone">biến mất</span>
+      </div>
+      <p data-i18n="chain.text">Nước và Mầm Cây thành Hoa, Hoa gặp Ong thành Mật Ong, Mật Ong đánh thức Gấu. Xếp khéo thì cả chuỗi chạy liền một mạch.</p>
+    </div>
+  </div>
+</section>
+
+<section id="features">
+  <div class="container">
+    <div class="section-head">
+      <p class="eyebrow" data-i18n="feat.eyebrow">Có gì trong game</p>
+      <h2 class="title" data-i18n="feat.title">Dễ vào, khó bỏ</h2>
+    </div>
+    <div class="grid features">
+      <article class="card">
+        <div class="ico"><span class="tile tile--static t-bear" role="img" aria-label="Gấu"><span class="face"></span><svg class="art" aria-hidden="true" focusable="false"><use href="#i-bear"></use></svg></span></div>
+        <h3 data-i18n="feat.levels.title">Hơn 30 màn và một con boss</h3>
+        <p data-i18n="feat.levels.text">Từ màn tập làm quen đến Giỏ Picnic Khổng Lồ: 120 món, chia thành 3 giai đoạn.</p>
+      </article>
+      <article class="card">
+        <div class="ico"><span class="tile tile--static t-honey" role="img" aria-label="Mật Ong"><span class="face"></span><svg class="art" aria-hidden="true" focusable="false"><use href="#i-honey"></use></svg></span></div>
+        <h3 data-i18n="feat.endless.title">Chế độ Vô Tận</h3>
+        <p data-i18n="feat.endless.text">Chơi hết đợt này sang đợt khác, chọn một trong bốn bậc khó và xem mình đi được bao xa.</p>
+      </article>
+      <article class="card">
+        <div class="ico"><span class="tile tile--static t-bee" role="img" aria-label="Ong"><span class="face"></span><svg class="art" aria-hidden="true" focusable="false"><use href="#i-bee"></use></svg></span><span class="tile tile--static t-flower" role="img" aria-label="Hoa"><span class="face"></span><svg class="art" aria-hidden="true" focusable="false"><use href="#i-flower"></use></svg></span></div>
+        <h3 data-i18n="feat.choice.title">Tự chọn cách ghép</h3>
+        <p data-i18n="feat.choice.text">Có lúc một món hợp cả hai bên, như Mèo gặp cả Cá lẫn Sữa. Bạn quyết định ghép nó với ai.</p>
+      </article>
+      <article class="card">
+        <div class="ico"><span class="tile tile--static t-box" role="img" aria-label="Hộp"><span class="face"></span><svg class="art" aria-hidden="true" focusable="false"><use href="#i-box"></use></svg></span></div>
+        <h3 data-i18n="feat.box.title">Hộp bí ẩn</h3>
+        <p data-i18n="feat.box.text">Bên trong có gì chỉ biết khi chạm vào. Có thể là món bạn đang cần, có thể không.</p>
+      </article>
+      <article class="card">
+        <div class="ico"><span class="tile tile--static t-cheese" role="img" aria-label="Phô Mai"><span class="face"></span><svg class="art" aria-hidden="true" focusable="false"><use href="#i-cheese"></use></svg></span></div>
+        <h3 data-i18n="feat.guide.title">Cầm tay chỉ việc</h3>
+        <p data-i18n="feat.guide.text">Màn đầu tiên dẫn bạn đi từng bước, từ lần chạm đầu tiên đến nút công thức.</p>
+      </article>
+      <article class="card">
+        <div class="ico"><span class="tile tile--static t-cat" role="img" aria-label="Mèo"><span class="face"></span><svg class="art" aria-hidden="true" focusable="false"><use href="#i-cat"></use></svg></span></div>
+        <h3 data-i18n="feat.help.title">Bí thì có trợ giúp</h3>
+        <p data-i18n="feat.help.text">Cần gợi ý, hoàn tác một nước hay thêm một ô khay? Xem một video ngắn là có, hoàn toàn tuỳ bạn.</p>
+      </article>
+      <article class="card">
+        <div class="ico"><span class="tile tile--static t-fish" role="img" aria-label="Cá"><span class="face"></span><svg class="art" aria-hidden="true" focusable="false"><use href="#i-fish"></use></svg></span></div>
+        <h3 data-i18n="feat.own.title">Tự vẽ, tự làm</h3>
+        <p data-i18n="feat.own.text">Hình ảnh và âm thanh trong game đều tự tạo, không dùng tài nguyên của ai khác.</p>
+      </article>
+      <article class="card">
+        <div class="ico"><span class="tile tile--static t-mouse" role="img" aria-label="Chuột"><span class="face"></span><svg class="art" aria-hidden="true" focusable="false"><use href="#i-mouse"></use></svg></span></div>
+        <h3 data-i18n="feat.open.title">Mở lên là chơi</h3>
+        <p data-i18n="feat.open.text">Không cần đăng nhập, không phải tạo tài khoản. Toàn bộ bằng tiếng Việt.</p>
+      </article>
+    </div>
+  </div>
+</section>
+
+<section class="band" id="worlds">
+  <div class="container">
+    <div class="section-head">
+      <p class="eyebrow" data-i18n="worlds.eyebrow">Năm thế giới</p>
+      <h2 class="title" data-i18n="worlds.title">Mỗi nơi một bộ công thức</h2>
+      <p class="lead" data-i18n="worlds.lead">Đi qua từng thế giới, bạn gặp món mới và những phản ứng mới.</p>
+    </div>
+    <div class="grid worlds">
+      <article class="world" style="--wc:#BDE7B5">
+        <div class="world__head"><h3 data-i18n="w.backyard.name">Sân Sau</h3><p data-i18n="w.backyard.tag">Nơi mọi chuyện bắt đầu</p></div>
+        <div class="world__body">
+          <p class="world__items" data-i18n="w.backyard.items"><b>Có:</b> Chó, Xương, Mèo, Cá, Chuột, Phô Mai, Nước, Mầm Cây, Ong, Gấu…</p>
+          <p class="world__chain" data-i18n="w.backyard.chain"><b>Chuỗi:</b> Nước + Mầm Cây → Hoa → + Ong → Mật Ong → + Gấu</p>
+        </div>
+      </article>
+      <article class="world" style="--wc:#FFD4A8">
+        <div class="world__head"><h3 data-i18n="w.kitchen.name">Bếp</h3><p data-i18n="w.kitchen.tag">Có bột, có lửa, có mèo rình sữa</p></div>
+        <div class="world__body">
+          <p class="world__items" data-i18n="w.kitchen.items"><b>Có:</b> Bột Mì, Trứng, Lửa, Bơ, Sữa…</p>
+          <p class="world__chain" data-i18n="w.kitchen.chain"><b>Chuỗi:</b> Bột Mì + Trứng → Bột Nhào → + Lửa → Bánh Mì → + Bơ</p>
+        </div>
+      </article>
+      <article class="world" style="--wc:#B8E3EC">
+        <div class="world__head"><h3 data-i18n="w.pond.name">Ao</h3><p data-i18n="w.pond.tag">Ếch, vịt và hoa sen</p></div>
+        <div class="world__body">
+          <p class="world__items" data-i18n="w.pond.items"><b>Có:</b> Ếch, Ruồi, Vịt, Bùn, Hạt Sen…</p>
+          <p class="world__chain" data-i18n="w.pond.chain"><b>Chuỗi:</b> Bùn + Hạt Sen → Hoa Sen → + Ong</p>
+        </div>
+      </article>
+      <article class="world" style="--wc:#F7C6DC">
+        <div class="world__head"><h3 data-i18n="w.toy.name">Phòng Đồ Chơi</h3><p data-i18n="w.toy.tag">Xếp tháp, vẽ tranh, thắt nơ</p></div>
+        <div class="world__body">
+          <p class="world__items" data-i18n="w.toy.items"><b>Có:</b> Gấu Bông, Nơ, Khối Gỗ, Màu Vẽ, Khung Vải, Khung Ảnh…</p>
+          <p class="world__chain" data-i18n="w.toy.chain"><b>Chuỗi:</b> Màu Vẽ + Khung Vải → Bức Tranh → + Khung Ảnh. Hai Khối Gỗ ghép thành Tòa Tháp.</p>
+        </div>
+      </article>
+      <article class="world" style="--wc:#CBC3F0">
+        <div class="world__head"><h3 data-i18n="w.forest.name">Rừng Phép</h3><p data-i18n="w.forest.tag">Từ bụi sao đến chổi bay</p></div>
+        <div class="world__body">
+          <p class="world__items" data-i18n="w.forest.items"><b>Có:</b> Nấm, Đom Đóm, Bụi Sao, Lông Vũ, Cây Chổi, Mũ Phù Thủy…</p>
+          <p class="world__chain" data-i18n="w.forest.chain"><b>Chuỗi:</b> Bụi Sao + Lông Vũ → Đôi Cánh → + Cây Chổi → Chổi Bay → + Mũ Phù Thủy</p>
+        </div>
+      </article>
+    </div>
+  </div>
+</section>
+
+<section id="endless">
+  <div class="container">
+    <div class="section-head">
+      <p class="eyebrow" data-i18n="end.eyebrow">Chế độ Vô Tận</p>
+      <h2 class="title" data-i18n="end.title">Chọn độ khó, chơi tới khi nào thua</h2>
+      <p class="lead" data-i18n="end.lead">Mỗi đợt là một bàn mới. Bậc càng cao càng khó, riêng Ác Mộng chỉ còn 5 ô khay.</p>
+    </div>
+    <div class="grid tiers">
+      <article class="tier" style="--tc:#5FD08A">
+        <h3 data-i18n="tier.easy.name">Dễ</h3>
+        <p data-i18n="tier.easy.text">Chỉ những cặp quen thuộc, nhưng nửa kia thường nằm dưới một tầng.</p>
+      </article>
+      <article class="tier" style="--tc:#4FB8C9">
+        <h3 data-i18n="tier.normal.name">Trung Bình</h3>
+        <p data-i18n="tier.normal.text">Thêm chuỗi hoa, mật ong, gấu, và bàn đông món hơn.</p>
+      </article>
+      <article class="tier" style="--tc:#FF8A5B">
+        <h3 data-i18n="tier.hard.name">Khó</h3>
+        <p data-i18n="tier.hard.text">Đủ sáu công thức, bàn rộng, gần như nhóm nào cũng bị tách qua tầng.</p>
+      </article>
+      <article class="tier" style="--tc:#EF6F6C">
+        <h3 data-i18n="tier.night.name">Ác Mộng</h3>
+        <p data-i18n="tier.night.text">Khay chỉ 5 ô, xếp chồng sâu, có hộp bí ẩn.</p>
+      </article>
+    </div>
+  </div>
+</section>
+
+<section class="band download" id="download">
+  <div class="container">
+    <div class="download__box">
+      <p class="eyebrow" data-i18n="soon.short">Sắp ra mắt</p>
+      <h2 class="title" data-i18n="dl.title">Traychemy đang được hoàn thiện</h2>
+      <p data-i18n="dl.text">Game đang trong giai đoạn phát triển cho Android &amp; iOS. Khi có bản tải về, nút tải sẽ xuất hiện ngay tại đây.</p>
+      <!-- TODO: khi lên cửa hàng, đổi nút bên dưới thành liên kết thật; thêm email liên hệ, ví dụ: <a href="mailto:EMAIL_CUA_BAN">EMAIL_CUA_BAN</a> -->
+      <div class="cta" style="justify-content:center;margin-top:0">
+        <button class="btn" type="button" aria-disabled="true" data-i18n="dl.none">Chưa có bản tải</button>
+        <a class="btn btn--ghost" href="#demo" data-i18n="dl.back">Quay lại chơi thử</a>
+      </div>
+    </div>
+  </div>
+</section>
+</main>
+
+<footer>
+  <div class="container foot">
+    <p data-i18n="foot.brand"><strong>Traychemy</strong> · nhặt món, ghép đôi, dọn sạch bàn.</p>
+    <p data-i18n="foot.note">© 2026 Traychemy. Hình trên trang này là minh hoạ vẽ lại từ đồ họa trong game, không phải ảnh chụp màn hình.</p>
+  </div>
+</footer>
+
+<script src="demo-engine.js"></script>
+<script src="i18n.js"></script>
+<script src="app.js"></script>
+</body>
+</html>
